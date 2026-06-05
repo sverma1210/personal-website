@@ -2,7 +2,7 @@
 title = "Research Work"
 date = 2026-05-31
 description = """
-I work at Software Technology Lab ([STG webpage](https://www.st.informatik.tu-darmstadt.de/people/shweta_verma/)). I work with [Abhinav Anand.](https://www.st.informatik.tu-darmstadt.de/people/abhinav_anand/)
+I work at Software Technology Lab ([STG webpage](https://www.st.informatik.tu-darmstadt.de/people/shweta_verma/)). I work with [Abhinav Anand](https://www.st.informatik.tu-darmstadt.de/people/abhinav_anand/).
 """
 +++
 
