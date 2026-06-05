@@ -1,6 +1,6 @@
 +++
 title = "Double Deep Reinforcement Learning assisted Handovers in 5G and Beyond Cellular Networks"
-date = 2025-11-07
+date = 2023-11-07
 
 [extra]
 #authors = [ "Shweta Verma" ]
