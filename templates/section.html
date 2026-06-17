@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="flex flex-col items-center mt-10">
+    {% if section.title %}<h1 class="font-bold font-sans break-normal text-gray-900 text-3xl sm:text-5xl pb-4">{{  section.title }}</h1>{% endif %}
+
+    <p>{{ section.content | safe }}</p>
+
+    {#- Show the list of tags on top of the cards, if a taxonomy is defined for that and there is more than one tag in use -#}
+    {% if section.extra.tags_taxonomy %}
+    {% set tags = get_taxonomy(kind=section.extra.tags_taxonomy, lang=lang) %}
+    {% if tags.items | length > 1 %}
+    <div class="flex flex-wrap justify-center flex-row gap-x-7 gap-y-5 mt-6 mb-6">
+        {% for item in tags.items %}
+        {{ content::term(term=item, i18n=i18n, i18n_user=i18n_user, icons=icons) }}
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endif %}
+
+    {# The section might be paginated or not, depending on the parameter in the index.md file. #}
+    {% if paginator %}{% set pages = paginator.pages %}{% else %}{% set pages = section.pages %}{% endif %}
+    
+    {% if section.extra.publications_types %}
+     {% for publication_type in section.extra.publications_types -%}
+    <div class ="prose py-4">
+      <h2 class=""> {{publication_type.title}} </h2>
+    </div>
+    {{ content::cards_pubs(pages=pages, type=publication_type.type, i18n=i18n, i18n_user=i18n_user, icons=icons)}}
+    {% endfor %}
+    {% else %}
+    {{ content::cards(pages=pages, i18n=i18n, i18n_user=i18n_user, icons=icons) }}
+    {% endif %}
+</div>
+
+{% endblock %}
