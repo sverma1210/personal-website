@@ -1,47 +1,31 @@
 # The URL the site will be built for
 base_url = "https://sverma1210.github.io/personal-website/"
-
-# Whether to automatically compile all Sass files in the sass directory
-compile_sass = false
-
-# Whether to build a search index to be used later on by a JavaScript library
-build_search_index = true
-
 title = "Shweta Verma"
 
-[translations]
-Biography = "Biography"
-Interests = "Interests"
-Education = "Education"
-toc = "Table of Contents"
-Published = "Published"
-Abstract = "Abstract"
-volume = "volume"
-number = "number"
-pages = "pages"
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
 
-# Various slugification strategies, see below for details
-# Defaults to everything being a slug
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlighting.code = true
+highlighting.theme = "catppuccin-mocha"
+
+
 [slugify]
 paths = "on"
 taxonomies = "on"
 anchors = "on"
 
-[markdown]
-# Whether to do syntax highlighting
-# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 
-[markdown.highlighting]
-theme = "catppuccin-mocha"
 
 [extra]
-favicon = "static/img/avatar.jpg"
-version = "1.0.1"
+# Put all your custom variables here
 avatar = "static/img/avatar.jpg"
-
-
-# Enter your email
-email = "me.shweta.sv12[at]gmail.com"
+favicon = "static/img/avatar.jpg"
 
 contact_in_index = true
 
@@ -52,26 +36,26 @@ menu_items = [
 ]
 
 # Translation related extra
-language_codes = [ "en", "fr" ]
+language_codes = [ "en" ]
 
-[extra.fr]
-contact_in_index = false
-menu_items = [
-  # { path = "#contacts_fr", name = "Contact" },
+enable_theme_switching = false
+
+daisyui_theme_light = "retro"
+daisyui_theme_dark = "retro"
+
+themes = [
+    { identifier = "retro", name = "Retro" },
+    ]
+
+[extra.social]
+github = "https://github.com/sverma1210"
+academic = "https://scholar.google.com/citations?hl=en&user=w11vyB8AAAAJ"
+linkedin = "https://www.linkedin.com/in/sverma12/"
+email = "me.shweta.sv12[at]gmail.com"
+
+[extra.navbar]
+links = [
+    { url = "research", i18n_key = "research" },
+    { url = "publications", i18n_key = "pubs" },
+    #{ url = "about me", i18n_key = "about" },
 ]
-
-# Your translations
-[languages.fr]
-title = "Kodama"
-
-[languages.fr.translations]
-Biography = "Bio"
-Interests = "Interêts"
-Education = "Formation"
-Published = "Publication"
-Abstract = "Résumé"
-
-
-
-
-#avatar_icons = "static/img/avatar.jpg"
